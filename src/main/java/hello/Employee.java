@@ -8,8 +8,8 @@ public class Employee {
     @Id
     public String id;
 
-    public String EmployeeId;
-    public String EmployeeName;
+    public String employeeId;
+    public String employeeName;
 
     public Employee() {}
 
