@@ -28,11 +28,9 @@ public class EmployeeController {
                             String.format(template, name));
     }
 
-    @RequestMapping("/employees")
-    public List<Employee> employee(@RequestParam(value="name", defaultValue="World") String name) {
-        //	repository.save(new Employee("Alice", "Smith"));
-	//	repository.save(new Employee("Bob", "Smith"));
-	 return repository.findAll();
+    @GetMapping("/employees")
+    public List<Employee> employees() {
+    	 return repository.findAll();
     }
 	
     @GetMapping("/employees/{id}")
