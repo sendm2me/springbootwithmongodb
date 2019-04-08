@@ -33,7 +33,7 @@ public class GreetingController {
     }
 	
 	@GetMapping("/employees/{id}")
-     public Employee one(@PathVariable Long id) {
+     public Employee one(@PathVariable String id) {
 
 		return repository.findById(id);
 	}
