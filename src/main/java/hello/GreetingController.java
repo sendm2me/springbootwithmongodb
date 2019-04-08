@@ -19,4 +19,10 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
+
+	@RequestMapping("/employee")
+    public List<Employee> employee(@RequestParam(value="name", defaultValue="World") String name) {
+        
+	    return repository.findAll();
+    }
 }
