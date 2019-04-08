@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 @RestController
-public class GreetingController {
+public class EmployeeController {
 
 	@Autowired
 	private EmployeeRepository repository;
