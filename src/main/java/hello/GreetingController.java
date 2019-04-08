@@ -40,7 +40,7 @@ public class GreetingController {
 	}
 	
 	@DeleteMapping("/employees/{id}")
-	void deleteEmployee(@PathVariable Long id) {
+	void deleteEmployee(@PathVariable String id) {
 		repository.deleteById(id);
 	}
 	
