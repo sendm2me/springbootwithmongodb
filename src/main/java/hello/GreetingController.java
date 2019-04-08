@@ -22,10 +22,16 @@ public class GreetingController {
                             String.format(template, name));
     }
 
-	@RequestMapping("/employee")
+	@RequestMapping("/employees")
     public List<Employee> employee(@RequestParam(value="name", defaultValue="World") String name) {
         	repository.save(new Employee("Alice", "Smith"));
 		repository.save(new Employee("Bob", "Smith"));
 	    return repository.findAll();
     }
+	
+	@GetMapping("/employees/{id}")
+     public Employee one(@PathVariable Long id) {
+
+		return repository.findById(id);
+	}
 }
