@@ -25,7 +25,7 @@ public class GreetingController {
 	@RequestMapping("/employee")
     public List<Employee> employee(@RequestParam(value="name", defaultValue="World") String name) {
         	repository.save(new Employee("Alice", "Smith"));
-		repository.save(new Customer("Bob", "Smith"));
+		repository.save(new Employee("Bob", "Smith"));
 	    return repository.findAll();
     }
 }
