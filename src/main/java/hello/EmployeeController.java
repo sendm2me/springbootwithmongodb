@@ -16,8 +16,8 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 
-	@Autowired
-	private EmployeeRepository repository;
+    @Autowired
+    private EmployeeRepository repository;
     
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
@@ -28,27 +28,27 @@ public class EmployeeController {
                             String.format(template, name));
     }
 
-	@RequestMapping("/employees")
+    @RequestMapping("/employees")
     public List<Employee> employee(@RequestParam(value="name", defaultValue="World") String name) {
-        	repository.save(new Employee("Alice", "Smith"));
-		repository.save(new Employee("Bob", "Smith"));
-	    return repository.findAll();
+        //	repository.save(new Employee("Alice", "Smith"));
+	//	repository.save(new Employee("Bob", "Smith"));
+	 return repository.findAll();
     }
 	
-	@GetMapping("/employees/{id}")
-     public Employee one(@PathVariable String id) {
+    @GetMapping("/employees/{id}")
+    public Employee one(@PathVariable String id) {
 
-		return repository.findById(id).get();
-	}
+	return repository.findById(id).get();
+    }
 	
-	@PostMapping("/employees")
-	Employee newEmployee(@RequestBody Employee newEmployee) {
-		return repository.save(newEmployee);
-	}
+    @PostMapping("/employees")
+    Employee newEmployee(@RequestBody Employee newEmployee) {
+	return repository.save(newEmployee);
+    }
 	
-	@DeleteMapping("/employees/{id}")
-	void deleteEmployee(@PathVariable String id) {
+    @DeleteMapping("/employees/{id}")
+    void deleteEmployee(@PathVariable String id) {
 		repository.deleteById(id);
-	}
+     }
 	
 }
